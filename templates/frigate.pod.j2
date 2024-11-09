@@ -1,0 +1,8 @@
+[Pod]
+{% if frigate_allow_unauthenticated %}
+PublishPort={{ frigate_unauthenticated_port }}:5000
+{% endif %}
+PublishPort={{ frigate_web_port }}:8971
+PublishPort={{ frigate_rtsp_port }}:8554
+PublishPort={{ frigate_webrtc_port }}:8555/tcp
+PublishPort={{ frigate_webrtc_port }}:8555/udp

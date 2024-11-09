@@ -1,0 +1,37 @@
+[Service]
+Description=A complete and local NVR
+
+[Container]
+{% if frigate_usb_coral %}
+AddDevice={{ frigate_usb_coral_path }}:/dev/bus/usb
+{% endif %}
+{% if frigate_pci_coral %}
+AddDevice=/dev/apex_0:/dev/apex_0
+{% endif %}
+{% if frigate_rpi4 %}
+AddDevice=/dev/video11:/dev/video11
+{% endif %}
+{% if frigate_hwaccel %}
+AddDevice={{ frigate_hwaccel_path }}:/dev/dri/renderD128
+{% endif %}
+AutoUpdate=registry
+ContainerName=frigate
+Environment=FRIGATE_RTSP_PASSWORD=password
+Image=ghcr.io/blakeblackshear/frigate:{{ frigate_version }}
+Pod=frigate.pod
+{% if frigate_privileged %}
+PodmanArgs=--privileged
+{% endif %}
+ShmSize={{ frigate_shm_size }}
+{% if frigate_usb_coral %}
+Tmpfs=/tmp/cache:size={{ frigate_tmpfs_size }}
+{% endif %}
+Volume=/etc/localtime:/etc/localtime:ro
+Volume={{ frigate_config_path }}:/config
+Volume={{ frigate_storage_path }}:/media/frigate
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

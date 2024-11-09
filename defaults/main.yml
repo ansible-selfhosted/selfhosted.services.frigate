@@ -1,4 +1,19 @@
 ---
-# defaults file for services.frigate
-
-published_port: 8080
+frigate_allow_unauthenticated: true
+frigate_config_path: ~/.config/frigate/config/
+frigate_hwaccel: false
+frigate_hwaccel_path: /dev/dri/renderD128
+frigate_pci_coral: false
+frigate_privileged: true
+frigate_rpi4: false
+frigate_rtsp_port: 8554
+frigate_shm_size: 64mb
+frigate_storage_path: ~/.config/frigate/storage/
+frigate_tmpfs_size: 1000000000
+frigate_unauthenticated_port: 5000
+frigate_usb_coral: false
+frigate_usb_coral_path: /dev/bus/usb
+frigate_use_tmpfs: true
+frigate_version: stable
+frigate_web_port: 8971
+frigate_webrtc_port: 8555
