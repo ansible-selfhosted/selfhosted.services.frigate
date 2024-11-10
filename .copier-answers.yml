@@ -1,8 +1,7 @@
----
 # Changes here will be overwritten by Copier
-_commit: 0d274a6
+_commit: 0.2.0
 _src_path: gh:ansible-selfhosted/selfhosted-role-template
-author_company: ""
+author_company: '""'
 author_email: git@speakintel.net
 author_name: SpeakinTelnet
 collection_name: services
@@ -10,6 +9,6 @@ copyright_holder: SpeakinTelnet
 license: MIT
 related_url: https://docs.frigate.video/
 repository_host: github.com
-repository_url: https://github.com/ansible-selfhosted/selfhosted.services.frigate.git
+repository_url: https://github.com/ansible-selfhosted/selfhosted.services.frigate
 role_name: frigate
 short_description: A role to deploy Frigate using rootless Podman with systemd.
