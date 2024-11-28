@@ -22,7 +22,7 @@ A role to deploy Frigate using rootless Podman with systemd.
 |Option|Description|Type|Required|Default|
 |---|---|---|---|---|
 |frigate_allow_unauthenticated|Expose the port for unauthenticated access|bool|False|False|
-|frigate_config_path|Path to the config directory|str|False|~/.config/frigate/config/|
+|frigate_config_path|Path to the config directory|str|False|~/.config/frigate/|
 |frigate_hwaccel|Enable hardware acceleration|bool|False|False|
 |frigate_hwaccel_path|Path to the hardware acceleration device<br>Only used if frigate_hwaccel is true|str|False|/dev/dri/renderD128|
 |frigate_pci_coral|Enable coral support via PCI for hardware acceleration|bool|False|False|
@@ -30,7 +30,7 @@ A role to deploy Frigate using rootless Podman with systemd.
 |frigate_rpi4|Enable support for the Raspberry Pi 4|bool|False|False|
 |frigate_rtsp_port|RTSP port|int|False|8554|
 |frigate_shm_size|Shared memory size<br>[reference](https://docs.frigate.video/frigate/installation#calculating-required-shm-size)|str|False|64mb|
-|frigate_storage_path|Path to the storage directory|str|False|~/.config/frigate/storage/|
+|frigate_storage_path|Path to the storage directory|str|False|~/.local/share/containers/storage/frigate/|
 |frigate_tmpfs_size|Size of the tmpfs<br>Only used if frigate_use_tmpfs is true|int|False|1000000000|
 |frigate_unauthenticated_port|Unauthenticated port<br>Only used if frigate_allow_unauthenticated is true|int|False|5000|
 |frigate_usb_coral|Enable coral support via USB for hardware acceleration|bool|False|False|

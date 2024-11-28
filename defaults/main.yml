@@ -1,5 +1,5 @@
 ---
-frigate_allow_unauthenticated: true
+frigate_allow_unauthenticated: false
 frigate_config_path: ~/.config/frigate/
 frigate_hwaccel: false
 frigate_hwaccel_path: /dev/dri/renderD128
