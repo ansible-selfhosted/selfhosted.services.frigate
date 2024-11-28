@@ -17,7 +17,7 @@ argument_specs:
       frigate_config_path:
         type: str
         required: false
-        default: ~/.config/frigate/config/
+        default: ~/.config/frigate/
         description:
           - Path to the config directory
       frigate_hwaccel:
@@ -68,7 +68,7 @@ argument_specs:
       frigate_storage_path:
         type: str
         required: false
-        default: ~/.config/frigate/storage/
+        default: ~/.local/share/containers/storage/frigate/
         description:
           - Path to the storage directory
       frigate_tmpfs_size:
