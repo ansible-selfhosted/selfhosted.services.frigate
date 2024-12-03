@@ -27,8 +27,8 @@ ShmSize={{ frigate_shm_size }}
 Tmpfs=/tmp/cache:size={{ frigate_tmpfs_size }}
 {% endif %}
 Volume=/etc/localtime:/etc/localtime:ro
-Volume={{ frigate_config_path }}:/config
-Volume={{ frigate_storage_path }}:/media/frigate
+Volume={{ frigate_config_path }}:/config:Z
+Volume={{ frigate_storage_path }}:/media/frigate:Z
 
 [Service]
 Restart=always
