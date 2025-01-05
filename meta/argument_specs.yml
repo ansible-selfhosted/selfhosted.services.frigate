@@ -8,12 +8,27 @@ argument_specs:
     author:
       - SpeakinTelnet
     options:
+      frigate_additional_options:
+        type: list
+        required: false
+        default: []
+        description:
+          - List of additional key=value for the quadlet container
+          - 'ex: - "Network=custom.network"'
+          - Can also be used to leave comments by preceding with a '#'
       frigate_allow_unauthenticated:
         type: bool
         required: false
         default: false
         description:
           - Expose the port for unauthenticated access
+      frigate_config_label:
+        type: str
+        required: false
+        default: ""
+        description:
+          - The labels for to the frigate config directory
+          - "Comma separated values (ex: rw,Z)"
       frigate_config_path:
         type: str
         required: false
@@ -65,6 +80,13 @@ argument_specs:
         description:
           - Shared memory size
           - "[reference](https://docs.frigate.video/frigate/installation#calculating-required-shm-size)"
+      frigate_storage_label:
+        type: str
+        required: false
+        default: ""
+        description:
+          - The labels for to the frigate storage directory
+          - "Comma separated values (ex: rw,Z)"
       frigate_storage_path:
         type: str
         required: false

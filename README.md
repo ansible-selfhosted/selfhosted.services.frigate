@@ -21,7 +21,9 @@ A role to deploy Frigate using rootless Podman with systemd.
 
 |Option|Description|Type|Required|Default|
 |---|---|---|---|---|
+|frigate_additional_options|List of additional key=value for the quadlet container<br>ex: - "Network=custom.network"<br>Can also be used to leave comments by preceding with a '#'|list|False|[]|
 |frigate_allow_unauthenticated|Expose the port for unauthenticated access|bool|False|False|
+|frigate_config_label|The labels for to the frigate config directory<br>Comma separated values (ex: rw,Z)|str|False||
 |frigate_config_path|Path to the config directory|str|False|~/.config/frigate/|
 |frigate_hwaccel|Enable hardware acceleration|bool|False|False|
 |frigate_hwaccel_path|Path to the hardware acceleration device<br>Only used if frigate_hwaccel is true|str|False|/dev/dri/renderD128|
@@ -30,6 +32,7 @@ A role to deploy Frigate using rootless Podman with systemd.
 |frigate_rpi4|Enable support for the Raspberry Pi 4|bool|False|False|
 |frigate_rtsp_port|RTSP port|int|False|8554|
 |frigate_shm_size|Shared memory size<br>[reference](https://docs.frigate.video/frigate/installation#calculating-required-shm-size)|str|False|64mb|
+|frigate_storage_label|The labels for to the frigate storage directory<br>Comma separated values (ex: rw,Z)|str|False||
 |frigate_storage_path|Path to the storage directory|str|False|~/.local/share/containers/storage/frigate/|
 |frigate_tmpfs_size|Size of the tmpfs<br>Only used if frigate_use_tmpfs is true|int|False|1000000000|
 |frigate_unauthenticated_port|Unauthenticated port<br>Only used if frigate_allow_unauthenticated is true|int|False|5000|
